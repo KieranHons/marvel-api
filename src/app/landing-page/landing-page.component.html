@@ -1,0 +1,27 @@
+<header class="mt-3" style="background-color: #FED2AA;">
+  <p class="text-center">{{attributionText}}</p>
+</header>
+
+<article class="comic" *ngif="showStory">
+  <div class="row wrapper">
+    <div class="col-lg-3 mt-3 mb-3">
+      <div class="card">
+        <img src="{{main.thumbnail.path +'/standard_medium.'+main.thumbnail.extension}}" width="100%" class="card-img-top" alt="Some Issue Loading Image..." />
+        <p class="text top-left">{{main.name}}</p>
+        <p class="text">{{main.description || 'Unfortunately there is no description'}}</p>
+      </div>
+    </div>
+    <div class="card description-wrapper">
+      <p class="text top-left">{{story.title}}</p>
+      <p class="description">{{story.description}}</p>
+    </div>
+  </div>
+  <div class="row wrapper">
+    <div class="col-lg-3 mt-3 mb-3" *ngFor="let extra of extraCharacters">
+      <div class="card">
+        <img src="{{extra.thumbnail.path +'/standard_medium.'+extra.thumbnail.extension}}" width="100%" class="card-img-top" alt="Some Issue Loading Image..." />
+        <p class="text top-left">{{extra.name}}</p>
+      </div>
+    </div>
+  </div>
+</article>
